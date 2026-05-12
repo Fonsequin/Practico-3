@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int tungtungsahur(string cadena1,string palabra1);
+
+int main()
+{
+    string cadena;
+    string palabra;
+    int booleano = 0;
+    cout << "Este programa verifica si dentro de una cadena esta la palabra que pongas" << endl << endl;
+    cout << "Ingrese la cadena: ";
+    getline(cin,cadena);
+    cout << "Ingrese la palabra a buscar: ";
+    cin >> palabra;
+    booleano = tungtungsahur(cadena,palabra);
+    
+    cout << endl;
+    if(booleano == 1)
+    {
+        cout << "La palabra que ingresaste SI esta en la cadena ingresada" << endl;
+    }
+    if(booleano == 0)
+    {
+        cout << "La palabra que ingresaste NO esta en la cadena ingresada" << endl;
+    }
+    cout << "La frase ingresada era: " << cadena << endl;
+    cout << "La palabra ingresada era: " << palabra << endl;
+}
+
+int tungtungsahur(string cadena1, string palabra1)
+{
+    int booleano1 = 0;
+    int incrementador = 0;
+    if(cadena1.at(incrementador) == palabra1.at(incrementador))
+    {
+        incrementador++;
+        if(cadena1.at(incrementador) == palabra1.at(incrementador))
+        {
+            incrementador++;
+            if(cadena1.at(incrementador) == palabra1.at(incrementador))
+            {
+                incrementador++;
+                if(cadena1.at(incrementador) == palabra1.at(incrementador))
+                {
+                    booleano1 = 1;
+                }
+            }
+        }
+    }
+    if(cadena1.at(incrementador) != palabra1.at(incrementador))
+    {
+        booleano1 = 0;
+    }
+    return booleano1;
+}
