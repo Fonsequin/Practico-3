@@ -30,4 +30,3 @@ int contarPalabras(string palabra1)
     }
     return resultadofinal1;
 }
-}
